@@ -2,10 +2,6 @@
 
 Google Search client
 
-## Installation
-
-    npm install google-search
-
 ## Usage
 
     google(query, [page], fn)
