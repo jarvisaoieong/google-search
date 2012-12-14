@@ -21,9 +21,7 @@ module.exports = (query, page, fn) ->
   url = util.format urlPattern, querystring.escape(query), start
 
   request url, (err, res, body) ->    
-    if err
-      fn err
-      return
+    return fn err if err
 
     # Load the html
     $ = cheerio.load body
@@ -32,8 +30,10 @@ module.exports = (query, page, fn) ->
     count = $(selector.count)
       .html()
       .replace(/,/g, '')
-      .match(/about.*results/ig)[0]
+      .match(/about.*results/ig)?[0]
       .match(/\d+/)[0]
+
+    return fn error: 'No data' unless count
 
     # Get the data
     results = []
@@ -48,6 +48,6 @@ module.exports = (query, page, fn) ->
         description: $(this).find(selector.description).text()
       
     fn null, 
-      count: parseInt count
+      count: parseInt count, 10
       data: results
 

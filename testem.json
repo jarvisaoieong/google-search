@@ -1,0 +1,17 @@
+{
+  "src_files": [
+    "test/**/*.coffee", 
+    "lib/**/*.coffee"
+  ],
+  "launchers": {
+    "Mocha": {
+      "command": "npm test"
+    }
+  },
+  "launch_in_dev": [
+    "Mocha"
+  ],
+  "launch_in_ci": [
+    "Mocha"
+  ]
+}

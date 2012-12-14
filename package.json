@@ -2,7 +2,8 @@
   "name": "google-search",
   "version": "0.0.1",
   "main": "index.js",
-  "scripts": {    
+  "scripts": {
+    "test": "mocha"
   },
   "license": "MIT",
   "description": "Google Search API",

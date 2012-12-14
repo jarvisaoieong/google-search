@@ -2,13 +2,11 @@
 
 Google Search client
 
-## Installation
-
-    npm install google-search
-
 ## Usage
 
-    google(query, [page], fn)
+```
+google(query, [page], fn)
+```
 
 ```javascript
 var google = require('google');
@@ -46,6 +44,16 @@ The results json format
     ...
   ]
 }
+```
+
+## Test
+
+```sh
+$ npm test
+```
+
+```sh
+$ testem
 ```
 
 ## License
