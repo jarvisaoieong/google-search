@@ -29,9 +29,9 @@ module.exports = (query, page, fn) ->
     # Get the count
     count = $(selector.count)
       .html()
-      .replace(/,/g, '')
+      ?.replace(/,/g, '')
       .match(/about.*results/ig)?[0]
-      .match(/\d+/)[0]
+      .match(/\d+/)?[0]
 
     return fn error: 'No data' unless count
 
